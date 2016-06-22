@@ -1,5 +1,6 @@
 {
   "question_name": "test_name",
+  "started":false,
   "options": [
     {
       "id": 1,
