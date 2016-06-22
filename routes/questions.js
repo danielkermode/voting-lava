@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var data = require('../data/data.json');
+var questionFunctions = require('../lib/index');
+var createNewQuestion = questionFunctions.createNewQuestion;
+var getQuestionById = questionFunctions.getQuestionById;
+var updateQuestion = questionFunctions.updateQuestion;
 
 /* GET questions listing. */
 router.get('/', function(req, res) {
-  res.redirect('/');
+  //res.redirect('/questions/new');
   res.send('cannot list questions at the moment');
 });
 
