@@ -8,7 +8,7 @@ var updateQuestion = questionFunctions.updateQuestion;
 
 /* GET questions listing. */
 router.get('/', function(req, res) {
-  res.redirect('/');
+  //res.redirect('/questions/new');
   res.send('cannot list questions at the moment');
 });
 
