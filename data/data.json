@@ -1,0 +1,16 @@
+{
+  "question_name": "test_name",
+  "options": [
+    {
+      "id": 1,
+      "name": "option_name",
+      "votes": 0
+    }
+  ],
+  "voters": [
+    {
+      "id": 1,
+      "option_id": 1
+    }
+  ]
+}
