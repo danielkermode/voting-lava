@@ -10,7 +10,7 @@
   "voters": [
     {
       "id": 1,
-      "vote_id": 1
+      "option_id": 1
     }
   ]
 }
