@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   console.log('create table')
-  return knex.schema.createTableIfNotExists('artists', function(table) {
+  return knex.schema.createTableIfNotExists('questions', function(table) {
     table.increments('id')
     table.string('name')
     table.string('year_debuted')
