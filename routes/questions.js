@@ -19,8 +19,8 @@ router.get('/new', function(req, res) {
 
 router.post('/', function(req, res){
   db.createNewQuestion(req.body)
-    .then(function(question){
-      res.redirect('/questions/' + question.id + '/edit');
+    .then(function(id){
+      res.redirect('/questions/' + id[0] + '/edit');
     })
     .catch(function(error){
       res.render('error',error);
@@ -28,9 +28,9 @@ router.post('/', function(req, res){
 });
 
 router.get('/:id/edit', function(req, res) {
-  db.getQuestionById(req.params.id)
-    .then(function(question) {
-      res.render('pollOptions', question[0]);
+  db.buildPageObject(req.params.id)
+    .then(function(pageObject) {
+      res.render('pollOptions', pageObject);
     })
     .catch(function(error) {
       res.render('error', error);
@@ -48,9 +48,9 @@ router.post('/:id', function(req, res){
 });
 
 router.get('/:id', function(req, res) {
-  db.getQuestionById(req.params.id)
-    .then(function(question) {
-      res.render('pollView', question);
+  db.buildPageObject(req.params.id)
+    .then(function(pageObject) {
+      res.render('pollView', pageObject);
     })
     .catch(function(error) {
       res.render('error', error);
