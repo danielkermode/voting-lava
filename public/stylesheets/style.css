@@ -36,9 +36,20 @@ body {
     -o-background-size: cover;
 }
 
+<<<<<<< Updated upstream
 .form-control {
 	width: 500px;
 	display: inline-block;
+=======
+.form-group {
+  text-align: left;
+>>>>>>> Stashed changes
+}
+
+.poll-options {
+  text-align: center;
+  margin: 0 auto;
+  width: 750px;
 }
 
 /* Preloader with Bootstrap Progress Bar
