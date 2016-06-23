@@ -34,6 +34,7 @@ router.get('/:id/edit', function(req, res) {
       res.render('pollOptions', pageObject);
     })
     .catch(function(error) {
+      console.log(error)
       res.render('error', error);
     })
 });
