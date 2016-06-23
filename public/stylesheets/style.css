@@ -40,6 +40,10 @@ a {
     -o-background-size: cover;
 }
 
+.form-horizontal .control-label {
+  text-align: left;
+}
+
 /* Preloader with Bootstrap Progress Bar
 -----------------------------------------------*/
 .loader {
