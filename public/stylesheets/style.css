@@ -36,14 +36,14 @@ body {
     -o-background-size: cover;
 }
 
-<<<<<<< Updated upstream
+
 .form-control {
 	width: 500px;
 	display: inline-block;
-=======
-.form-group {
+ }
+
+.control-label {
   text-align: left;
->>>>>>> Stashed changes
 }
 
 .poll-options {
