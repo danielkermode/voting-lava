@@ -1,2 +1,22 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class='loader'>
+  <div class='loader-container'>
+    <h3><b>Pickr is initializing...</b></h3>
+    <div class='progress progress-striped active'>
+      <div class='progress-bar progress-bar-color' id='bar' role='progressbar' style='width: 0%;'></div>
+    </div>
+  </div>
+</div>
+
+	<div class="content">
+		<div class="text-vertical-center">
+			<img src="/images/question-mark.png" class="" />
+			<h1>Welcome to Pickr</h1>
+			<h3>Please enter your question</h3>
+			<form role="form" action="/questions" accept-charset="UTF-8" method="POST">
+				<div class="form-group">
+					<input type="text" name="question" class="form-control" placeholder="Enter Question Here">
+				</div>
+					<button type="submit" class="btn btn-success btn-lg">Ask!</button>	
+			</form>
+		</div>
+	</div>
