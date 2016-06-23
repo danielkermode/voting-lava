@@ -14,5 +14,7 @@ var progress = setInterval(function () {
 
 $(window).load(function() {
   $("#bar").width(600);
-  $(".loader").fadeOut(2000);
+  $(".loader-container").fadeOut(2000);
+  setInterval(function() {$(".loader").css('display', 'none')}, 2000)
+  setInterval(function() {$(".content").css('display', 'table')}, 2000)
 });
