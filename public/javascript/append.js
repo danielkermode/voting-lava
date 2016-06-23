@@ -6,6 +6,10 @@ function addOption() {
 }
 
 function removeOption() {
-  numOfChoices--
-  $('.choice-holder:last-child').remove()
+  if (numOfChoices > 2) {
+    numOfChoices--
+    document.querySelector('.choice-holder').lastChild.remove()
+  } else {
+    console.log("Too few choices")
+  }
 }
