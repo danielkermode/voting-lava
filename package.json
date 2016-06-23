@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": "tape test/*.js | tap-spec"
+    "test": "tape test/*.js | tap-spec",
+    "database": "knex migrate:rollback && knex migrate:latest"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -16,6 +17,7 @@
     "knex": "^0.11.7",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
+    "socket.io": "^1.4.6",
     "sqlite3": "^3.1.4"
   },
   "devDependencies": {
