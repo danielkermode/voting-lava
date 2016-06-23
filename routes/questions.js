@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var data = require('../data/data.json');
-var questionFunctions = require('../lib/index');
-var createNewQuestion = questionFunctions.createNewQuestion;
-var getQuestionById = questionFunctions.getQuestionById;
-var updateQuestion = questionFunctions.updateQuestion;
+var dbConfig = require('../db-config')
+var knex = dbConfig.knex
+var config = dbConfig.config
+
+var db = require('../lib/index')(knex)
 
 /* GET questions listing. */
 router.get('/', function(req, res) {
@@ -17,9 +18,9 @@ router.get('/new', function(req, res) {
 });
 
 router.post('/', function(req, res){
-  createNewQuestion(req.body)
-    .then(function(question){
-      res.redirect('/questions/' + question.id + '/edit');
+  db.createNewQuestion(req.body)
+    .then(function(id){
+      res.redirect('/questions/' + id[0] + '/edit');
     })
     .catch(function(error){
       res.render('error',error);
@@ -27,9 +28,9 @@ router.post('/', function(req, res){
 });
 
 router.get('/:id/edit', function(req, res) {
-  getQuestionById(req.params.id)
-    .then(function(question) {
-      res.render('pollOptions', question);
+  db.buildPageObject(req.params.id)
+    .then(function(pageObject) {
+      res.render('pollOptions', pageObject);
     })
     .catch(function(error) {
       res.render('error', error);
@@ -37,7 +38,7 @@ router.get('/:id/edit', function(req, res) {
 });
 
 router.post('/:id', function(req, res){
-  updateQuestion(req.params.id,req.body)
+  db.updateQuestion(req.params.id,req.body)
     .then(function(){
       res.redirect('/questions/' + req.params.id);
     })
@@ -47,9 +48,9 @@ router.post('/:id', function(req, res){
 });
 
 router.get('/:id', function(req, res) {
-  getQuestionById(req.params.id)
-    .then(function(question) {
-      res.render('pollView', question);
+  db.buildPageObject(req.params.id)
+    .then(function(pageObject) {
+      res.render('pollView', pageObject);
     })
     .catch(function(error) {
       res.render('error', error);
