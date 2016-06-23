@@ -102,3 +102,24 @@ test('it updates options for a question', function (t) {
       t.end()
     })
 })
+var expectedPageObject = {
+  name: 'What color is the sky?',
+  started: false,
+  options: dummyOptions
+}
+
+test('buildPageObject builds a page object as expected', function (t) {
+    db.updateOptions(1, dummyOptions)
+      .then(function() {
+        return db.buildPageObject(1)
+      })
+      .then(function(pageObject) {
+        t.equal(expectedPageObject.name, pageObject.name, 'page object name equals expected')
+        t.equal(expectedPageObject.options[0].name, pageObject.options[0].name, 'first page object options name equals expected')
+        t.end()
+      })
+      .catch(error => {
+        t.ok(0, error)
+        t.end()
+      })
+})
