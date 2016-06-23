@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var data = require('../data/data.json');
 var dbConfig = require('../db-config')
 var knex = dbConfig.knex
 var config = dbConfig.config
