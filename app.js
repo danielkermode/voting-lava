@@ -8,13 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var questions = require('./routes/questions');
 
-
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
-// var socket = require('./socket/socket')(io);
-// socket();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
