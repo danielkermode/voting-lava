@@ -26,15 +26,20 @@ router.post('/', function(req, res){
     })
 });
 
-router.get('/:id/edit', function(req, res) {
-  getQuestionById(req.params.id)
-    .then(function(question) {
-      res.render('pollOptions', question);
-    })
-    .catch(function(error) {
-      res.render('error', error);
-    })
-});
+// router.get('/:id/edit', function(req, res) {
+//   getQuestionById(req.params.id)
+//     .then(function(question) {
+//       res.render('pollOptions', question);
+//     })
+//     .catch(function(error) {
+//       res.render('error', error);
+//     })
+// });
+
+// Temporary route to view edit page
+router.get('/edit', function(req, res) {
+  res.render('pollOptions')
+})
 
 router.post('/:id', function(req, res){
   updateQuestion(req.params.id,req.body)
