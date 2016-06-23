@@ -1,3 +1,7 @@
-<h1>{{message}}</h1>
-<h2>{{error.status}}</h2>
-<pre>{{error.stack}}</pre>
+{{#if error}}
+  <h1>{{error}}</h1>
+  <h2>{{error.status}}</h2>
+  <pre>{{error.stack}}</pre>
+{{else}}
+  <h1>Whoops! Page not found.</h1>
+{{/if}}

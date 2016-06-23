@@ -1,4 +1,4 @@
-var redtape = require('redtape');
+var redtape = require('redtape')
 var dbConfig = require('../db-config')
 var knex = dbConfig.knex
 var config = dbConfig.config
@@ -10,11 +10,11 @@ var dummyQ = {
   started: false,
   created_at: Date.now(),
   updated_at: Date.now()
-};
+}
 
 var option = {
   name: 'Green'
-};
+}
 
 var test = redtape({
   beforeEach: function (callback) {
@@ -61,7 +61,7 @@ var dummyQ2 = {
   started: false,
   created_at: Date.now(),
   updated_at: Date.now()
-};
+}
 
 test('it adds a question to the database', function (t) {
   db.createNewQuestion(dummyQ2)

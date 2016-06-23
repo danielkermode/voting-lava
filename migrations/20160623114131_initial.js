@@ -16,11 +16,11 @@ exports.up = function(knex, Promise) {
         table.timestamps()
       })
     ])
-};
+}
 
 exports.down = function(knex, Promise) {
   return Promise.all([
     knex.schema.dropTableIfExists('questions'),
     knex.schema.dropTableIfExists('options')
   ])
-};
+}
