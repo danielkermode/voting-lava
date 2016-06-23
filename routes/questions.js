@@ -23,6 +23,7 @@ router.post('/', function(req, res){
       res.redirect('/questions/' + id[0] + '/edit');
     })
     .catch(function(error){
+      console.log(error)
       res.render('error',error);
     })
 });
