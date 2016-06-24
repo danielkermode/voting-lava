@@ -1,9 +1,8 @@
 var socket = io()
-
 socket.on('newvotes', function(data) {
   //update vote count.. TODO!!!
-  console.log(data)
-  $('#' + data.id).innerHTML = data.votes
+
+  $('#voteCount_' + data.id).html(data.votes)
 })
 
 function updateVote(id, amount){
