@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>{{this.question_name}}</h1>
+  <h1>{{this.name}}</h1>
 	<table>
-	  {{#each options}}
+	  {{#each this.options}}
 	  	<tr>
 	  		<td><button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></button></td>
 	  		<td><button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button></td>
