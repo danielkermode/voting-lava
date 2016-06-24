@@ -13,3 +13,12 @@ function removeOption() {
     console.log("Too few choices")
   }
 }
+
+window.onkeyup = function(e) {
+  if (key == 187) {
+    addOption()
+  }
+  if (key == 189) {
+    removeOption()
+  }
+}
