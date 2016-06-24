@@ -17,9 +17,11 @@ function removeOption() {
 window.onkeyup = function(e) {
   var key = e.keyCode ? e.keyCode : e.which
   if (key == 187) {
+    $('input').blur()
     addOption()
   }
   if (key == 189) {
+    $('input').blur()
     removeOption()
   }
 }
