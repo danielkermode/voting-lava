@@ -10,7 +10,7 @@ function removeOption() {
     numOfChoices--
     document.querySelector('.choice-holder').lastChild.remove()
   } else {
-    console.log("Too few choices")
+    $.toaster({ priority : 'warning', title : 'Not enough entries', message : "It isn't a poll if there aren't any choices!"});
   }
 }
 
