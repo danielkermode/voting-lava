@@ -2,7 +2,7 @@ var config = {
   database: {
     dialect:  'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      filename: 'http://build.thingsima.de/voting/dev.sqlite3'
     },
     useNullAsDefault: true
   },
