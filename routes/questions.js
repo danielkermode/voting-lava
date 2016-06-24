@@ -39,7 +39,15 @@ router.get('/:id/edit', function(req, res) {
 })
 
 router.post('/:id', function(req, res){
-  db.updateOptions(req.params.id,req.body)
+  console.log(req.body)
+  var options = req.body.name.map(function(opt) {
+    return {
+      name: opt,
+      votes: 0,
+      question_id: req.params.id
+    }
+  })
+  db.updateOptions(req.params.id, options)
     .then(function(){
       res.redirect('/questions/' + req.params.id)
     })
