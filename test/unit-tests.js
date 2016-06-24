@@ -80,9 +80,9 @@ test('it adds a question to the database', function (t) {
 })
 
 var dummyOptions = [
-  { name: 'blue', question_id: 1 },
-  { name: 'green', question_id: 1 },
-  { name: 'red', question_id: 1 }
+  { name: 'blue', question_id: 1, votes: 0 },
+  { name: 'green', question_id: 1, votes: 0 },
+  { name: 'red', question_id: 1, votes: 0 }
 ]
 
 test('it updates options for a question', function (t) {
@@ -122,4 +122,42 @@ test('buildPageObject builds a page object as expected', function (t) {
         t.ok(0, error)
         t.end()
       })
+})
+
+test('Increment option vote', function(t){
+  db.updateOptions(1, dummyOptions)
+    .then(function() {
+      return db.updateOptionVote(1, 1)
+    })
+    .then(function(newCount) {
+      t.equal(newCount, 1, 'new vote newCount = 1')
+      return db.getOptionsByQuestion(1)
+    })
+    .then(function(options) {
+      t.equal(options[0].votes, 1, 'option votes updated in db')
+      t.end()
+    })
+    .catch(error => {
+      t.ok(0, error)
+      t.end()
+    })
+})
+
+test('Decrement option vote', function(t){
+  db.updateOptions(1, dummyOptions)
+    .then(function() {
+      return db.updateOptionVote(1, -1)
+    })
+    .then(function(newCount) {
+      t.equal(newCount, -1, 'new vote newCount = -1')
+      return db.getOptionsByQuestion(1)
+    })
+    .then(function(options) {
+      t.equal(options[0].votes, -1, 'option votes updated in db')
+      t.end()
+    })
+    .catch(error => {
+      t.ok(0, error)
+      t.end()
+    })
 })
