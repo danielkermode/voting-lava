@@ -39,7 +39,6 @@ router.get('/:id/edit', function(req, res) {
 })
 
 router.post('/:id', function(req, res){
-  console.log(req.body)
   var options = req.body.name.map(function(opt) {
     return {
       name: opt,
