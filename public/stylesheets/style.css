@@ -10,7 +10,6 @@ body {
 	width: 100%;
 }
 
-
 .text-vertical-center {
     display: table-cell;
     text-align: center;
@@ -24,7 +23,6 @@ body {
     font-weight: 700;
 }
 
-
 .content {
     display: none;
     position: relative;
@@ -32,14 +30,19 @@ body {
     height: 100%;
 }
 
-
 .form-control {
-	width: 500px;
+	width: 300px;
 	display: inline-block;
+ }
+
+ .form-horizontal .form-group {
+   margin-right: 50px;
+   margin-left: -15px;
  }
 
 .control-label {
   text-align: left;
+  float: none;
 }
 
 .poll-options {
