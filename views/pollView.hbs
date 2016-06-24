@@ -1,4 +1,8 @@
 <div class="container">
+  <div class="timer-container">
+  	<h2 id="timer"></h2>
+  </div>
+  <div id="time">{{this.created_at}}</div>
 	<div class="poll-options">
   <h1>{{this.name}}</h1>
 	<table id="pollTable">
@@ -24,6 +28,7 @@
 	  {{/each}}
   </tbody>
 	</table>
+		<button type="button" onclick="" class="btn btn-success btn-lg timer-container"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span></button>
 	</div>
 </div>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>

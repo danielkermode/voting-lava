@@ -1,6 +1,7 @@
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Lobster);
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 html,
 body {
@@ -8,6 +9,15 @@ body {
   color: 	#e5e5e5;
 	height: 100%;
 	width: 100%;
+}
+
+h1, h2 {
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -22,6 +32,15 @@ tr {
   background: rgba(255,255,255,0.2);
 }
 
+#time {
+  display: none;
+  visibility: hidden;
+}
+
+
+.timer-container {
+  float: left;
+}
 
 .text-vertical-center {
   display: table-cell;
@@ -48,7 +67,7 @@ tr {
 	display: inline-block;
  }
 
- .home-question {
+ .form-control .home-question {
   width: 450px;
   display: inline-block;
  }
