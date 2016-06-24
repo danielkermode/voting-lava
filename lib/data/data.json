@@ -1,0 +1,11 @@
+{
+  "name": "test_name",
+  "started":false,
+  "options": [
+    {
+      "id": 1,
+      "name": "option_name",
+      "votes": 0
+    }
+  ]
+}
