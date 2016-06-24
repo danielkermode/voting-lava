@@ -39,7 +39,7 @@ router.get('/:id/edit', function(req, res) {
 })
 
 router.post('/:id', function(req, res){
-  db.updateQuestion(req.params.id,req.body)
+  db.updateOptions(req.params.id,req.body)
     .then(function(){
       res.redirect('/questions/' + req.params.id)
     })
