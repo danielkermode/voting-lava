@@ -1,14 +1,20 @@
 <div class="container">
+	<div class="poll-options">
   <h1>{{this.name}}</h1>
 	<table>
+	<col width="50">
+	<col width="50">
+	<col width="500">
 	  {{#each this.options}}
 	  	<tr>
-	  		<td><button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></button></td>
-	  		<td><button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button></td>
-	  		<td><h3>{{this.options.name}}</h3></td>
+	  		<td><h3>{{this.votes}}</h3></td>
+	  		<td><button type="button" onclick="updateVote({{this.id}}, 1)" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button></td>
+	  		<td><h3>{{this.name}}</h3></td>
+	  		<td><button type="button" onclick="updateVote({{this.id}}, -1)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button></td>
 	  	</tr>
 	  {{/each}}
 	</table>
+	</div>
 </div>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript" src="/javascript/socketclient.js"></script>

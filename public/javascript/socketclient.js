@@ -6,4 +6,8 @@ function updateVote(id, amount){
     amount: amount
   })
   //update vote count.. TODO!!!
+  var current = $('#' + id).innerHTML
+  $('#' + id).innerHTML = parseInt(current) + amount
 }
+
+updateVote(1, 1)
