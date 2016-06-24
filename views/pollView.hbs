@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  function sort() {
+    $("#pollTable").tablesorter( {sortList: [[0,1]]} );
+  }
+</script>
+
 <div class="container">
   <div class="timer-container">
   	<h2 id="timer"></h2>
@@ -9,6 +15,15 @@
 	<col width="50">
 	<col width="50">
 	<col width="500">
+  <thead style="display: none">
+    <tr>
+      <th>Votes</th>
+      <th>Yes</th>
+      <th>Name</th>
+      <th>No</th>
+    </tr>
+  </thead>
+  <tbody>
 	  {{#each this.options}}
 	  	<tr>
 	  		<td><h3 id="voteCount_{{this.id}}">{{this.votes}}</h3></td>
@@ -17,8 +32,17 @@
 	  		<td><button type="button" onclick="updateVote({{this.id}}, -1)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button></td>
 	  	</tr>
 	  {{/each}}
+  </tbody>
 	</table>
 	</div>
 </div>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript" src="/javascript/socketclient.js"></script>
+<script type="text/javascript" src="/javascript/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+    {
+        $("#pollTable").tablesorter( {sortList: [[0,1]]} );
+    }
+);
+</script>
