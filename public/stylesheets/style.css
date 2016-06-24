@@ -36,12 +36,18 @@ body {
 
 
 .form-control {
-	width: 500px;
+	width: 300px;
 	display: inline-block;
+ }
+
+ .form-horizontal .form-group {
+   margin-right: 50px;
+   margin-left: -15px;
  }
 
 .control-label {
   text-align: left;
+  float: none;
 }
 
 .poll-options {

@@ -1,6 +1,6 @@
 <div class="container poll-options">
-  <h1>Create your poll</h1>
-  <form class="form-horizontal poll-options">
+  <h1>{{this.name}}</h1>
+  <form class="form-horizontal poll-options" action="/questions/{{this.id}}" method="POST">
     <div class="choice-holder">
       <div class="form-group">
         <label for="entry1" class="col-sm-2 control-label">Option 1</label>
