@@ -3,8 +3,8 @@
 	<table>
 	  {{#each this.options}}
 	  	<tr>
-	  		<td><button type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button></td>
-	  		<td><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button></td>
+	  		<td><button type="button" onclick="updateVote({{this.id}}, 1)" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button></td>
+	  		<td><button type="button" onclick="updateVote({{this.id}}, -1)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button></td>
 	  		<td><h3>{{this.options.name}}</h3></td>
 	  	</tr>
 	  {{/each}}
